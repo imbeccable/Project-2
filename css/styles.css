@@ -1,0 +1,29 @@
+.triangle {
+    width:0;
+    height:0;
+}
+
+#triangle1 {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom:100px solid blue;
+
+}
+#triangle2 {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom:100px solid yellow;
+
+}
+#triangle3 {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom:100px solid red;
+
+}
+#triangle4 {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom:100px solid green;
+
+}
