@@ -15,51 +15,64 @@ let colorSet2 = [
     "pink"
 ];
 
-// function options() {
-//     //top
-//     fill(colorSet1[0]);
-//     triangle(0,0,windowWidth,0,windowWidth/2,windowHeight/2);
-//     //left
-//     fill(colorSet1[1]);
-//     triangle(0,0,0,windowHeight,windowWidth/2,windowHeight/2);
-//     //bottom
-//     fill(colorSet1[2]);
-//     triangle(0,windowHeight,windowWidth,windowHeight,windowWidth/2,windowHeight/2);
-//     //right
-//     fill(colorSet1[3]);
-//     triangle(windowWidth,windowHeight,windowWidth,0,windowWidth/2,windowHeight/2);
-    
-// }
+/* 
+function makeKEy() {
+    sessionStorage.setItem("gateKey", true);
+}
 
-function changeTriColor() {
+function checkForKey() {
+    if (sessionStorage.getItem("gateKey") == true) {
+        console.log("got key");
+    }
+}
+*/
+
+function chooseColor(color, event) {
+    var keyCode = event.key;
     tlist = document.getElementsByClassName("triangle");
-    
     t0 = tlist[0];
-    t1 = tlist[1];
-    t2 = tlist[2];
-    t3 = tlist[3];
+    let i = 0;
 
-    t0.style.borderBottomColor = colorSet1[0]
+    if (keyCode == "Enter") {
+        while (i<color.length); {
+            console.log(i)
+            setInterval(() => {
+                //bottom triangle
+                if (t0.style.borderBottomColor == colorSet1[0]) 
+                    {t0.style.borderBottomColor = colorSet2[0];}
+                else 
+                    {t0.style.borderBottomColor = colorSet1[0];}
+                //left triangle   
+                if (t0.style.borderLeftColor == colorSet1[1]) 
+                    {t0.style.borderLeftColor = colorSet2[1];}
+                else 
+                    {t0.style.borderLeftColor = colorSet1[1];} 
+                //top triangle        
+                if (t0.style.borderTopColor == colorSet1[2]) 
+                    {t0.style.borderTopColor = colorSet2[2];}
+                else 
+                    {t0.style.borderTopColor = colorSet1[2];} 
+                //right triangle        
+                if (t0.style.borderRightColor == colorSet1[3]) 
+                    {t0.style.borderRightColor = colorSet2[3];}
+                else 
+                    {t0.style.borderRightColor = colorSet1[3];}
+                }, 1000);
+        }
+        
+    }
+    //t0.style.borderBottomColor = colorSet1[0]
     //console.log(t0);
     //TODO: for chosen color, loop through length of color word and change the
     //color for each i. wait an amount of time between each change
-    for (i=0;i<colorSet1[0].length;i++) {
-        setTimeout(() => {            
-            if (t0.style.borderBottomColor == colorSet1[0]) 
-                {t0.style.borderBottomColor = colorSet2[0];}
-            else if(t0.style.borderBottomColor == colorSet2[0]) 
-                {t0.style.borderBottomColor = colorSet1[0]}              
-            },1000);
-    }
-    // t1.style.borderBottomColor = colorSet2[1];
-    // t2.style.borderBottomColor = colorSet2[2];
-    // t3.style.borderBottomColor = colorSet2[3];
-    //console.log(t0.style.borderBottomColor);
+    
+            
+           
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    background(0);    
+    //background(0);    
 }
 
 

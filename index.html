@@ -9,13 +9,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <div id="grid" onclick="changeTriColor()">
-        <div id="triangle1" class="triangle"></div>
-        <div id="triangle2" class="triangle"></div>
-        <div id="triangle3" class="triangle"></div>
-        <div id="triangle4" class="triangle"></div>
-    </div>
-    <script src="js/test.js"></script>
+
+    <p>Type one of the following to continue the game: red, green, blue, yellow</p>
+    <input type="text" size="40" onkeypress="chooseColor(this.value, event)">
+    <p></p>
+    <div class="triangle"></div>
+    
+    <script src="js/test.js">
+
+    </script>
     
 </body>
 </html>

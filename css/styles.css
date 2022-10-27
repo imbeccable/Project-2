@@ -1,4 +1,4 @@
-.triangle {
+/* .triangle {
     width:0;
     height:0;
 }
@@ -7,12 +7,14 @@
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
     border-bottom:100px solid blue;
+    transform: rotate(180deg);
 
 }
 #triangle2 {
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom:100px solid yellow;
+    border-bottom: 100px solid yellow;
+    transform: rotate(90deg);
 
 }
 #triangle3 {
@@ -25,5 +27,16 @@
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
     border-bottom:100px solid green;
+    transform: rotate(270deg);
 
+} */
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 200px solid yellow;
+    border-right: 200px solid green;
+    border-bottom: 200px solid blue;
+    border-top: 200px solid red;
+    display: inline-block;
 }
