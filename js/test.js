@@ -27,14 +27,46 @@ function checkForKey() {
 }
 */
 
-function chooseColor(color, event) {
+function changeTriColor(value, event) {
     var keyCode = event.key;
     tlist = document.getElementsByClassName("triangle");
     t0 = tlist[0];
     let i = 0;
 
-    if (keyCode == "Enter") {
-        while (i<color.length); {
+    if (isNaN(value)) {
+        if (keyCode == "Enter") {
+            
+            console.log(i)
+            interval = setInterval(() => {
+                //bottom triangle
+                if (t0.style.borderBottomColor == colorSet1[0]) 
+                    {t0.style.borderBottomColor = colorSet2[0];}
+                else 
+                    {t0.style.borderBottomColor = colorSet1[0];}
+                //left triangle   
+                if (t0.style.borderLeftColor == colorSet1[1]) 
+                    {t0.style.borderLeftColor = colorSet2[1];}
+                else 
+                    {t0.style.borderLeftColor = colorSet1[1];} 
+                //top triangle        
+                if (t0.style.borderTopColor == colorSet1[2]) 
+                    {t0.style.borderTopColor = colorSet2[2];}
+                else 
+                    {t0.style.borderTopColor = colorSet1[2];} 
+                //right triangle        
+                if (t0.style.borderRightColor == colorSet1[3]) 
+                    {t0.style.borderRightColor = colorSet2[3];}
+                else 
+                    {t0.style.borderRightColor = colorSet1[3];}
+                i++;
+                if (i>value.length) {
+                    clearInterval(interval);
+                }
+                }, 1000);
+            
+        }
+    } else {
+        for (i;i<value;i++); {
             console.log(i)
             setInterval(() => {
                 //bottom triangle
@@ -59,15 +91,7 @@ function chooseColor(color, event) {
                     {t0.style.borderRightColor = colorSet1[3];}
                 }, 1000);
         }
-        
     }
-    //t0.style.borderBottomColor = colorSet1[0]
-    //console.log(t0);
-    //TODO: for chosen color, loop through length of color word and change the
-    //color for each i. wait an amount of time between each change
-    
-            
-           
 }
 
 function setup() {
