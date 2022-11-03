@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatterbox</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    
+    <p class="visible" id="first instruction">Type one of the following to continue the game: red, green, blue, yellow</p>
+    <input class="visible" id="first input" type="text" size="40" onkeypress="changeTriColor(this.value, event);">
+    <p class="invisible" id="second instruction">Choose a number</p>
+    <input class="invisible" hidden id="second input" type="number" size="40" onkeypress="changeTriColor(this.value, event); revealButtons();">
+
+    <p></p>
+    <div text-align="center" class="triangle"></div>
+    <p></p>
+    <button class="invisible" id="next_stage" onclick="hideFirstStage(); showSecondStage()">Next stage</button>
+    <div>
+        <button class="invisible" id="redbutton" type="button" disabled="true" onclick="let colorpick = 'red'; fortunes(colorpick)">Red</button>
+        <button class="invisible" id="grebutton" type="button" disabled="true" onclick="colorpick = 'green'; fortunes(colorpick)">Green</button>
+        <button class="invisible" id="bluebutton" type="button" disabled="true" onclick="colorpick = 'blue'; fortunes(colorpick)">Blue</button>
+        <button class="invisible" id="yelbutton" type="button" disabled="true" onclick="colorpick = 'yellow'; fortunes(colorpick)">Yellow</button>
+        <button class="invisible" id="pinkbutton" type="button" disabled="true" onclick="colorpick = 'pink'; fortunes(colorpick)">Pink</button>
+        <button class="invisible" id="olivebutton" type="button" disabled="true" onclick="colorpick = 'olive'; fortunes(colorpick)">Olive</button>
+        <button class="invisible" id="tealbutton" type="button" disabled="true" onclick="colorpick = 'teal'; fortunes(colorpick)">Teal</button>
+        <button class="invisible" id="orgbutton" type="button" disabled="true" onclick="colorpick = 'orange'; fortunes(colorpick)">Orange</button>
+    </div>
+    
+    <script src="js/game functions.js">
+    </script>
+    
+</body>
+</html>

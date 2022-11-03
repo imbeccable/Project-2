@@ -1,3 +1,25 @@
+body {
+    background-color: dodgerblue;
+}
+
+h1 {
+    text-align:center;
+    color: white;
+}
+
+h2 {
+    text-align:center;
+    color: white;
+}
+
+a {
+    color:white;
+}
+
+p {
+    color:white;
+}
+
 .triangle {
     width: 0;
     height: 0;
@@ -9,14 +31,10 @@
     display: inline-block;
 }
 
-h1 {
-    text-align:center;
+.visible {
+    display:block;
 }
 
-h2 {
-    text-align:center;
-}
-
-div {
-    text-align:center;
+.invisible {
+    display: none;
 }
