@@ -9,16 +9,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-
-    
+    <!-- First stage -->
     <p class="visible" id="first instruction">Type one of the following to continue the game: red, green, blue, yellow</p>
     <input class="visible" id="first input" type="text" size="40" onkeypress="changeTriColor(this.value, event);">
+    
+    <!-- Second stage -->
     <p class="invisible" id="second instruction">Choose a number</p>
-    <input class="invisible" hidden id="second input" type="number" size="40" onkeypress="changeTriColor(this.value, event); revealButtons();">
+    <input class="invisible" id="second input" type="number" size="40" onkeypress="changeTriColor(this.value, event); revealButtons();">
+
+    <!-- Final stage -->
+    <h1 id="fortune" class="invisible">Your determined guidance is...</h1>
+    <p></p>
+    
+    <!-- if red picked -->
+    <h1 id="twored" class="invisible">Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.</h1>
+    <h1 id="1red1yel" class="invisible">Love what you do and do what you love. Passion is the key that oepns the door to joy and abunance.</h1>
+    <h1 id="1red1gre" class="invisible">Inhale courage, exhale fear.</h1>
+    <h1 id="1red1blue" class="invisible">It's better to cry than be angry, because anger hurts others while tears flow silently through the soul and cleanse the heart.</h1>
+
+    <!-- if blue picked -->
+    <h1 id="1blue1red" class="invisible">Anger is sadness that had nowhere to go.</h1>
+    <h1 id="twoblue" class="invisible">There is prodigious strength in sorrow and despair</h1>
+    <h1 id="1blue1yel" class="invisible">There is life after the trauma, the shame, and the fear. Your days will get better and the darkness will fade.</h1>
+    <h1 id="1blue1gre" class="invisible">If giving leaves you feeling empty, you're giving too much.</h1>
+
+    <!-- if green picked -->
+    <h1 id="twogre" class="invisible">Growth is uncomfortable because you've never been here before.</h1>
+    <h1 id="1gre1red" class="invisible">One's anger is one's greatest enemy and one's calmness is one's protection.</h1>
+    <h1 id="1gre1blue" class="invisible">Sometimes you have to accept that certain things will never go back to how they used to be.</h1>
+    <h1 id="1gre1yel" class="invisible">Happy is he who learns to bear what he cannot change.</h1>
+
+    <!-- if yellow picked -->
+    <h1 id="1yel1red" class="invisible">There is no passion to be found playing small; in settling for a life that is less than the one you are capable of living</h1>
+    <h1 id="1yel1blue" class="invisible">To be content doesn't mean you don't desire more, it means you're thankful for what you have.</h1>
+    <h1 id="twoyel" class="invisible">Happiness is the relief after extreme tension.</h1>
+    <h1 id="1yel1gre" class="invisible">You cannot become what you want by remaining who you are.</h1>
+
+    <!-- if pink picked -->
+    <h1 id="1red1pink" class="invisible">Kindness is a choice.</h1>
+    <h1 id="1yel1pink" class="invisible">There is only one happiness in life: to love and be loved in return.</h1>
+    <h1 id="1blue1pink" class="invisible">To be alone is not the same as being lonely.</h1>
+    <h1 id="1gre1pink" class="invisible">HOpe is the one thing that can help you through the darkest of times.</h1>
+
+    <!-- if orange picked -->
+    <h1 id="1red1org" class="invisible">In the end, we only regret the chances we didn't take and the decisions we waited too long to make.</h1>
+    <h1 id="1yel1org" class="invisible">You can't use up creativity. The more you use, the more you have.</h1>
+    <h1 id="1gre1org" class="invisible">Communication is the bridge between confusion and clarity</h1>
+    <h1 id="1blue1org" class="invisible">Anything worth having is worth waiting for.</h1>
+
+    <!-- if teal picked -->
+    <h1 id="1red1t" class="invisible">The single biggest problem in communicaton is the illusion that it has taken place.</h1>
+    <h1 id="1blue1t" class="invisible">Balance is not something you find, it's something you create.</h1>
+    <h1 id="1gre1t" class="invisible">Peace cannot be kept by force. It can only be achieve by understanding.</h1>
+    <h1 id="1yel1t" class="invisible">You are the sky. Everything else is just the weather.</h1>
+
+    <!-- if olive picked -->
+    <h1 id="1red1oli" class="invisible">The nearer a person comes to a calm mind, the closer they are to strength.</h1>
+    <h1 id="1blue1oli" class="invisible">The art of life is not controlling what happens to you, but using what happens to you.</h1>
+    <h1 id="1yel1oli" class="invisible">Joy is peace dancing and peace is joy at rest.</h1>
+    <h1 id="1gre1oli" class="invisible">One day you will be at the place you always wanted to be.</h1>
 
     <p></p>
-    <div text-align="center" class="triangle"></div>
+    <h1 id="play again" class="invisible"><a href="index.html">Play Again?</a></h1>
+    
+    <!-- The chatterbox itself -->
     <p></p>
+    <div id="triangle" text-align="center" class="triangle"></div>
+    <p></p>
+
+    <!-- The buttons to choose second color -->
     <button class="invisible" id="next_stage" onclick="hideFirstStage(); showSecondStage()">Next stage</button>
     <div>
         <button class="invisible" id="redbutton" type="button" disabled="true" onclick="let colorpick = 'red'; fortunes(colorpick)">Red</button>
